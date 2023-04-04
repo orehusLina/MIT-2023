@@ -1,13 +1,15 @@
 #include <iostream>
 using namespace std;
 
-int fib(int n) {
-    if (n <= 1) return 0;
-    else if (n == 2) return 1;
-    else return fib(n-1) + fib (n-2);
+void fib(int n) {
+    int x1 = 0, x2 = 1;
+    for (int i = 0; i < n; ++i) {
+        cout << x1 << '\n';
+        x2 += x1, x1 = x2 - x1;
+    }
 }
 
 int main() {
-    cout << "fib(10) = " << fib(10) << '\n';
+    fib(10);
     return 0;
 }
